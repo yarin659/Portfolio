@@ -1,25 +1,36 @@
 // src/App.jsx
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./index.css";
 
-// components & sections
 import Navbar from "./components/Navbar";
 import About from "./sections/About";
-// כשנוסיף בהמשך:
- import Skills from "./sections/Skills";
- import Projects from "./sections/Projects";
- import Experience from "./sections/Experience";
- import Education from "./sections/Education";
- import Contact from "./sections/Contact";
+import Skills from "./sections/Skills";
+import Projects from "./sections/Projects";
+import Experience from "./sections/Experience";
+import Education from "./sections/Education";
+import Contact from "./sections/Contact";
 
 const App = () => {
   const [lang, setLang] = useState("he"); // "he" | "en"
 
+  // החלת כיוון ושפה על <html> עצמו כדי ש-RTL יהיה מלא (כולל טפסים/native UI)
+  useEffect(() => {
+    const root = document.documentElement; // <html>
+    root.setAttribute("dir", lang === "he" ? "rtl" : "ltr");
+    root.setAttribute("lang", lang === "he" ? "he" : "en");
+  }, [lang]);
+
   return (
-    <div
-      className="min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 transition-colors"
-      dir={lang === "he" ? "rtl" : "ltr"}
-    >
+      <div
+  className="
+    min-h-svh antialiased scroll-smooth
+    bg-lightBg text-neutral-900
+    dark:bg-darkBg dark:text-neutral-100
+    transition-colors
+  "
+>
+
+
       <Navbar lang={lang} setLang={setLang} />
 
       <main className="mx-auto max-w-6xl px-4 py-16 space-y-16">

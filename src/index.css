@@ -1,1 +1,39 @@
 @import "tailwindcss";
+
+
+@layer base {
+  /* מצב בהיר: כל הטקסטים כהים, כולל בתוך כפתורים וקישורים */
+  html:not(.dark) {
+    color: #111 !important;
+  }
+
+  /* כופה צבע כהה על רוב האלמנטים הטקסטואליים */
+  html:not(.dark) :is(h1,h2,h3,h4,h5,h6,p,span,li,div,blockquote,small,em,strong,label,dd,dt,a,code,pre) {
+    color: #111 !important;
+  }
+
+  /* כפתורים ולינקים עם רקע – גם בפנים הטקסט כהה (כמו שביקשת) */
+  html:not(.dark) :is(button,.btn,[role="button"],a.button,a.btn) {
+    color: #111 !important;
+  }
+
+  /* קלטים/placeholder במצב בהיר */
+  html:not(.dark) :is(input,textarea,select) {
+    color: #111 !important;
+  }
+  html:not(.dark) ::placeholder {
+    color: #7e7e7e !important; /* ניטרלי-אפור קריא */
+  }
+}
+
+@layer base {
+  /* רקע עדין במצב בהיר */
+  html:not(.dark) {
+    background-color: #efefef; /* אפור-לבן רך */
+  }
+
+  /* בחירה בטקסט (היילייט) */
+  ::selection {
+    background: #6b5bff33;
+  }
+}

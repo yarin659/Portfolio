@@ -1,6 +1,6 @@
 export const links = {
   github: "https://github.com/yarin659",
-  linkedin: "http://linkedin.com/in/yarincohen123",
+  linkedin: "https://www.linkedin.com/in/yarin-cohen-219b31281/",
   // cvHe: "/cv/Yarin-Cohen-HE.pdf",   // תעדכן כשתהיה לך כתובת
   // cvEn: "/cv/Yarin-Cohen-EN.pdf",
 };
